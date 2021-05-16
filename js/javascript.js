@@ -6,6 +6,10 @@ function inicial(){
 
   var resultado = document.getElementById('resultado');
   var resetear = document.getElementById('resetear');
+  var logaritmo = document.getElementById('logaritmo');
+  var seno = document.getElementById('seno');
+  var coseno = document.getElementById('coseno');
+  var tangente = document.getElementById('tangente');
   var suma = document.getElementById('suma');
   var resta = document.getElementById('resta');
   var multiplicacion = document.getElementById('multiplicacion');
@@ -53,6 +57,30 @@ function inicial(){
   cero.onclick = function(e){
       resultado.textContent = resultado.textContent  + "0";
   }
+  seno.onclick=function(e){
+  	resultado.textContent=resultado.textContent+"Sin ";
+  		operacion="Sin";
+  	    limpiar();
+  	primertermino=resultado.textContent;
+  }
+   coseno.onclick=function(e){
+  	resultado.textContent=resultado.textContent+"Cos ";
+  		operacion="Cos";
+  		limpiar();
+  		primertermino=resultado.textContent;
+  }
+   tangente.onclick=function(e){
+  	resultado.textContent=resultado.textContent+"Tan ";
+  		operacion="Tan";
+  		limpiar();
+  		primertermino=resultado.textContent;
+  }
+   logaritmo.onclick=function(e){
+  	resultado.textContent=resultado.textContent+"Log ";
+  		operacion="Log";
+  		limpiar();
+  		primertermino=resultado.textContent;
+  }
   resetear.onclick = function(e){
       resetear();
   }
@@ -92,7 +120,9 @@ function resetear(){
   operacion = "";
 }
 function resolver(){
-  var res = 0;
+  var res =0 ;
+    const gr = deg =>(deg * Math.PI) / 180.0
+ 
   switch(operacion){
     case "+":
       res = parseFloat(primertermino) + parseFloat(segundotermino);
@@ -105,6 +135,22 @@ function resolver(){
       break;
     case "/":
       res = parseFloat(primertermino) / parseFloat(segundotermino);
+      break;
+      case "Sin":
+      segundotermino= Math.sin(gr(primertermino)).toFixed(4);
+     res=segundotermino;
+      break;
+       case "Cos":
+      segundotermino= Math.cos(gr(primertermino)).toFixed(4);
+         res=segundotermino;
+      break;
+       case "Tan":
+      segundotermino= Math.tan(gr(primertermino)).toFixed(4);
+         res=segundotermino;
+      break;
+       case "Log":
+      segundotermino= Math.log(gr(primertermino)).toFixed(4);
+         res=segundotermino;
       break;
   }
   resetear();

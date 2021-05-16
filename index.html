@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<title>Calculadora </title>
 </head>
-<body onload="inicial();">
+<body onload="inicial();"background="img.gif">
 
 <table class="cont-calculadora">
 <tr>
@@ -20,7 +20,10 @@
   <td><button id="uno">1</button></td><td><button id="dos">2</button></td><td><button id="tres">3</button></td><td><button id="resta">-</button></td>
 </tr>
 <tr>
-  <td><button id="igual">=</button></td><td><button id="cero">0</button></td><td><button id="resetear">C</button></td><td><button id="suma">+</button></td>
+  <td><button id="igual">=</button></td><td><button id="cero">0</button></td><td><button onclick="resetear();" id="resetear">C</button></td><td><button id="suma">+</button></td>
+</tr>
+<tr>
+  <td><button id="seno">Sin</button></td><td><button id="coseno">Cos</button></td><td><button id="tangente">Tan</button></td><td><button id="logaritmo">Log</button></td>
 </tr>
 <tr>
   <td colspan="4"><span id="creditos">Alex_Rodriguez_1708</span></td>
